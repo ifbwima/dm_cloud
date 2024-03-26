@@ -32,6 +32,7 @@ var sku = "";
 const adminUsername = "hello";
 const adminPassword = "Helloo1!";
 const ipAdress = "10.10.10.10";
+const timeout = 90000;
 
 const ubuntu = {
 	publisher: "Canonical",
@@ -88,7 +89,7 @@ async function createResources(os_machine: string) {
 	setTimeout(() => {
 		console.log("Timer exceeded, now deleting resources");
 		deleteResourceGroup();
-	}, 90000);
+	}, timeout);
     return JSON.stringify({
       "username":adminUsername,
       "password":adminPassword,
